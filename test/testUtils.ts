@@ -4,7 +4,7 @@ import { render } from "@testing-library/react";
 // import defaultStrings from "i18n/en-x-default"
 
 type Props = {
-  children?: ReactNode;
+  children?: React.ReactNode;
 };
 
 const Providers = ({ children }: Props) => {
