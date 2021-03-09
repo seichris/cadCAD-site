@@ -1,10 +1,15 @@
-const CadCAD = () => (
+type Props = {
+  className?: string;
+};
+
+const CadCAD = ({ className = "w-full my-6 h-2" }: Props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="265"
     height="72"
     viewBox="0 0 265 72"
     fill="none"
+    className={`${className}`}
   >
     <path
       fillRule="evenodd"

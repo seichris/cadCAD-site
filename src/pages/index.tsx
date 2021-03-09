@@ -9,7 +9,7 @@ export const Home = (): JSX.Element => {
   return (
     <div>
       <Head>
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <title>
@@ -68,7 +68,7 @@ export const Home = (): JSX.Element => {
                 className="toggleColour text-white no-underline hover:no-underline font-bold text-2xl lg:text-4xl"
                 href="#"
               >
-                <CadCAD className="w-full my-6 h-2" />
+                <CadCAD />
               </a>
             </div>
             <div
@@ -82,7 +82,7 @@ export const Home = (): JSX.Element => {
                 className="p-1 ml-auto text-white hover:text-gray-200 transition-colors duration-200 rounded-full hover:text-white focus:outline-none "
               >
                 <span className="sr-only">Github</span>
-                <Github className="w-full my-6 h-2" />
+                <Github />
               </a>
               <a
                 href="https://github.com/better-feedback"
@@ -91,7 +91,7 @@ export const Home = (): JSX.Element => {
                 className="p-1 ml-auto text-white hover:text-gray-200 transition-colors duration-200 rounded-full hover:text-white focus:outline-none "
               >
                 <span className="sr-only">Discord</span>
-                <Discord className="w-full my-6 h-2" />
+                <Discord />
               </a>
               <a
                 href="https://github.com/better-feedback"
@@ -100,7 +100,7 @@ export const Home = (): JSX.Element => {
                 className="p-1 ml-auto text-white hover:text-gray-200 transition-colors duration-200 rounded-full hover:text-white focus:outline-none "
               >
                 <span className="sr-only">Twitter</span>
-                <Twitter className="w-full my-6 h-2" />
+                <Twitter />
               </a>
               <button
                 id="navAction"
