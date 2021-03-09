@@ -2,7 +2,7 @@ type Props = {
   className?: string;
 };
 
-const Github = ({ className = "w-full my-6 h-2" }: Props) => (
+const Github = ({ className = "my-6" }: Props) => (
   <svg
     width="24"
     height="24"

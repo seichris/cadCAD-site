@@ -375,11 +375,11 @@ export const Home = (): JSX.Element => {
 
         {/* Join our community */}
         <section className="bg-white border-b py-8">
-          <div className="container mx-auto flex flex-row pt-4 pb-12">
-            <h2 className="w-1/2 my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+          <div className="container mx-auto flex md:flex-row flex-col pt-4 pb-12">
+            <h2 className="md:w-1/2 w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
               Join our community
             </h2>
-            <div className="w-1/2 text-xl text-gray-800 px-6">
+            <div className="md:w-1/2 w-full text-xl text-gray-800 px-6">
               <p className="text-gray-800 px-6 mb-5">
                 We&apos;ve open-sourced cadCAD for the community and we want it
                 to become a community-driven project.
@@ -394,16 +394,16 @@ export const Home = (): JSX.Element => {
 
         {/* Support us with a donation */}
         <section className="bg-white border-b py-8">
-          <div className="container mx-auto flex flex-row pt-4 pb-12">
-            <h2 className="w-1/2 my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+          <div className="container mx-auto flex md:flex-row flex-col pt-4 pb-12">
+            <h2 className="md:w-1/2 w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
               Support us with a donation
             </h2>
-            <div className="w-1/2 text-xl text-gray-800 px-6">
-              <p className="text-gray-800 px-6 mb-5">
+            <div className="md:w-1/2 w-full text-xl text-gray-800 px-6">
+              <p className="text-gray-800 px-6 mb-5 break-words">
                 You can support our product on OpenCollective:
                 https://opencollective.com/cadcad1
               </p>
-              <p className="text-gray-800 px-6 mb-5">
+              <p className="text-gray-800 px-6 mb-5 break-words">
                 Or you can donate crypto by sending ETH/tokens to our multisig
                 address: 0xbcd768c566143714309afe87feb901da7543f470
               </p>
