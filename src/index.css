@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  overflow-x: hidden;
+}
+
+.header-background {
+  /*background-image: -webkit-linear-gradient(top, rgba(27,31,81,0.50), rgba(19,17,63,0.90));*/
+  background-image: url("https://static.tildacdn.com/tild3737-6364-4835-b435-346565336638/-/resize/20x/cadcad_Bg.png");
+  /*background-repeat: no-repeat;*/
+  background-size: contain;
+}
+
+#header {
+  height: 535px;
+}
