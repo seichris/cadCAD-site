@@ -233,7 +233,7 @@ export const Home = (): JSX.Element => {
               </div>
               */}
             </div>
-            <div className="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink border-l border-l-blue-200 border-l-2">
+            <div className="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink md:border-l">
               <div className="flex-1 rounded-t rounded-b-none overflow-hidden shadow">
                 <div className="w-full font-bold text-xl text-white px-6 pb-4">
                   How?
@@ -246,7 +246,7 @@ export const Home = (): JSX.Element => {
                 </p>
               </div>
             </div>
-            <div className="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink border-l">
+            <div className="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink md:border-l">
               <div className="flex-1 rounded-t rounded-b-none overflow-hidden shadow">
                 <div className="w-full font-bold text-xl text-white px-6 pb-4">
                   What?
@@ -587,7 +587,9 @@ export const Home = (): JSX.Element => {
                   target="_blank"
                   className="text-cadcad-lightblue"
                 >
-                  https://opencollective.com/cadcad1
+                  <span className="break-all">
+                    https://opencollective.com/cadcad1
+                  </span>
                 </a>
               </p>
               <p className="text-gray-800 px-6 mb-5 break-words">
@@ -599,7 +601,9 @@ export const Home = (): JSX.Element => {
                   target="_blank"
                   className="text-cadcad-lightblue"
                 >
-                  0xbcd768c566143714309afe87feb901da7543f470
+                  <span className="break-all">
+                    0xbcd768c566143714309afe87feb901da7543f470
+                  </span>
                 </a>
               </p>
             </div>
@@ -642,7 +646,7 @@ export const Home = (): JSX.Element => {
                   Product
                 </p>
                 <ul className="list-reset mb-6">
-                  <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <li className="mt-2 mr-2 md:block md:mr-0">
                     <a
                       href="https://github.com/cadCAD-org/cadCAD"
                       rel="noopener noreferrer"
@@ -652,7 +656,7 @@ export const Home = (): JSX.Element => {
                       Github
                     </a>
                   </li>
-                  <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <li className="mt-2 mr-2 md:block md:mr-0">
                     <a
                       href="https://www.youtube.com/playlist?list=PLmWm8ksQq4YKtdRV-SoinhV6LbQMgX1we"
                       rel="noopener noreferrer"
@@ -662,7 +666,7 @@ export const Home = (): JSX.Element => {
                       Video tutorials
                     </a>
                   </li>
-                  <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <li className="mt-2 mr-2 md:block md:mr-0">
                     <a
                       href="https://www.youtube.com/playlist?list=PLmWm8ksQq4YJnNDMaslh20axb4r7fgW_a"
                       rel="noopener noreferrer"
@@ -672,7 +676,7 @@ export const Home = (): JSX.Element => {
                       Inspirational videos
                     </a>
                   </li>
-                  <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <li className="mt-2 mr-2 md:block md:mr-0">
                     <a
                       href="https://www.one-tab.com/page/1G-5FvsaSauRH-jfQA9KEA"
                       rel="noopener noreferrer"
@@ -689,7 +693,7 @@ export const Home = (): JSX.Element => {
                   Join our community
                 </p>
                 <ul className="list-reset mb-6">
-                  <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <li className="mt-2 mr-2 md:block md:mr-0">
                     <a
                       href="https://discord.gg/5m9ZXEEj4F"
                       rel="noopener noreferrer"
@@ -699,7 +703,7 @@ export const Home = (): JSX.Element => {
                       Discord
                     </a>
                   </li>
-                  <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <li className="mt-2 mr-2 md:block md:mr-0">
                     <a
                       href="https://community.cadcad.org/"
                       rel="noopener noreferrer"
@@ -709,7 +713,7 @@ export const Home = (): JSX.Element => {
                       Discourse
                     </a>
                   </li>
-                  <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <li className="mt-2 mr-2 md:block md:mr-0">
                     <a
                       href="https://t.me/joinchat/BehTglN4UOLe83MpgBelzw"
                       rel="noopener noreferrer"
@@ -719,7 +723,7 @@ export const Home = (): JSX.Element => {
                       Telegram
                     </a>
                   </li>
-                  <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <li className="mt-2 mr-2 md:block md:mr-0">
                     <a
                       href="https://twitter.com/cadcad_org"
                       rel="noopener noreferrer"
@@ -736,7 +740,7 @@ export const Home = (): JSX.Element => {
                   Support us
                 </p>
                 <ul className="list-reset mb-6">
-                  <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <li className="mt-2 mr-2 md:block md:mr-0">
                     <a
                       href="#"
                       rel="noopener noreferrer"
@@ -746,19 +750,21 @@ export const Home = (): JSX.Element => {
                       OpenCollective
                     </a>
                   </li>
-                  <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <li className="mt-2 mr-2 md:block md:mr-0">
                     <div className="no-underline text-gray-800">
                       ETH Donation address:
                     </div>
                   </li>
-                  <li className="mt-2 inline-block mr-2 md:block md:mr-0">
+                  <li className="mt-2 mr-2 md:block md:mr-0">
                     <a
                       href="https://etherscan.io/address/0xbcd768c566143714309afe87feb901da7543f470"
                       rel="noopener noreferrer"
                       target="_blank"
                       className="no-underline hover:underline text-gray-800 hover:text-pink-500"
                     >
-                      0xbcd768c566143714309afe87feb901da7543f470
+                      <span className="break-all">
+                        0xbcd768c566143714309afe87feb901da7543f470
+                      </span>
                     </a>
                   </li>
                 </ul>
