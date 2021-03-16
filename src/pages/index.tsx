@@ -1,11 +1,33 @@
+import { useEffect, useState } from "react";
 import Head from "next/head";
 // logos
 import CadCAD from "../components/svg/cadcad";
 import Github from "../components/svg/github";
 import Discord from "../components/svg/discord";
 import Twitter from "../components/svg/twitter";
+import Youtube from "../components/svg/youtube";
+import GettingStarted1 from "../components/svg/gettingStarted1";
+import GettingStarted2 from "../components/svg/gettingStarted2";
+import GettingStarted3 from "../components/svg/gettingStarted3";
+import GettingStarted4 from "../components/svg/gettingStarted4";
+import GettingStarted5 from "../components/svg/gettingStarted5";
+import GettingStarted6 from "../components/svg/gettingStarted6";
 
 export const Home = (): JSX.Element => {
+  const [scroll, setScroll] = useState(0);
+
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      //const scrollFar = window.scrollY < 100
+      //if (scrollFar !== scroll) {
+      if (window.scrollY > 100) {
+        setScroll(1);
+      } else if (window.scrollY < 99) {
+        setScroll(0);
+      }
+    });
+  });
+
   return (
     <div>
       <Head>
@@ -61,7 +83,11 @@ export const Home = (): JSX.Element => {
 
       <div className="w-screen relative flex flex-col justify-center items-center">
         {/* Nav Bar */}
-        <nav className="fixed w-full z-30 top-0 left-0 text-white bg-cadcad-blue">
+        <nav
+          className={`fixed w-full z-30 top-0 left-0 text-white transition duration-500 ease-in-out ${
+            scroll == 1 ? "bg-cadcad-blue" : "bg-transparent"
+          }`}
+        >
           <div className="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
             <div className="flex items-center">
               <a
@@ -72,42 +98,53 @@ export const Home = (): JSX.Element => {
               </a>
             </div>
             <div
-              className="w-full lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20 justify-between space-x-2"
+              className="w-full lg:flex lg:items-center lg:w-auto hidden mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20 justify-between"
               id="nav-content"
             >
               <a
-                href="https://github.com/better-feedback"
+                href="https://github.com/cadCAD-org/cadCAD"
                 rel="noopener noreferrer"
                 target="_blank"
-                className="p-1 ml-auto text-white hover:text-gray-200 transition-colors duration-200 rounded-full hover:text-white focus:outline-none "
+                className="p-2 ml-auto text-white hover:text-gray-300 transition-colors duration-200 rounded-full hover:text-white focus:outline-none"
               >
                 <span className="sr-only">Github</span>
                 <Github />
               </a>
               <a
-                href="https://github.com/better-feedback"
+                href="https://discord.gg/5m9ZXEEj4F"
                 rel="noopener noreferrer"
                 target="_blank"
-                className="p-1 ml-auto text-white hover:text-gray-200 transition-colors duration-200 rounded-full hover:text-white focus:outline-none "
+                className="p-2 ml-auto text-white hover:text-gray-300 transition-colors duration-200 rounded-full hover:text-white focus:outline-none"
               >
                 <span className="sr-only">Discord</span>
                 <Discord />
               </a>
               <a
-                href="https://github.com/better-feedback"
+                href="https://twitter.com/cadcad_org"
                 rel="noopener noreferrer"
                 target="_blank"
-                className="p-1 ml-auto text-white hover:text-gray-200 transition-colors duration-200 rounded-full hover:text-white focus:outline-none "
+                className="p-2 ml-auto text-white hover:text-gray-300 transition-colors duration-200 rounded-full hover:text-white focus:outline-none"
               >
                 <span className="sr-only">Twitter</span>
                 <Twitter />
               </a>
-              <button
-                id="navAction"
-                className="mx-auto bg-white hover:bg-gray-200 text-gray-800 font-bold rounded lg:mt-0 ml-4 py-3 px-5 focus:outline-none focus:shadow-outline transition-colors duration-200"
+              <a
+                href="https://www.youtube.com/channel/UCPePNv3dJN--aKhFGOa0Rjg"
+                rel="noopener noreferrer"
+                target="_blank"
+                className="p-2 ml-auto text-white hover:text-gray-300 transition-colors duration-200 rounded-full hover:text-white focus:outline-none"
+              >
+                <span className="sr-only">Twitter</span>
+                <Youtube />
+              </a>
+              <a
+                href="https://community.cadcad.org/"
+                rel="noopener noreferrer"
+                target="_blank"
+                className="mx-auto bg-white hover:bg-gray-200 text-gray-800 font-bold rounded lg:mt-0 ml-8 py-2 px-4 focus:outline-none focus:shadow-outline transition-colors duration-200"
               >
                 Join our community
-              </button>
+              </a>
               {/*
               <ul className="list-reset lg:flex justify-end flex-1 items-center">
                 <li className="mr-3">
@@ -144,17 +181,22 @@ export const Home = (): JSX.Element => {
                 simulation.
               </p>
               <div className="flex flex-row justify-center space-x-2">
-                <button className=" bg-white hover:bg-gray-200 text-gray-800 font-bold rounded lg:mt-0 ml-4 py-4 px-6 focus:outline-none focus:shadow-outline transition-colors duration-200 uppercase">
+                <a
+                  className=" bg-cadcad-lightblue hover:bg-cadcad-lightblue-hover text-gray-800 font-bold rounded lg:mt-0 ml-4 py-4 px-6 focus:outline-none focus:shadow-outline transition-colors duration-200 uppercase"
+                  href="https://github.com/cadCAD-org"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
                   Try it out
-                </button>
-                <button
+                </a>
+                <a
                   className=" bg-white hover:bg-gray-200 text-gray-800 font-bold rounded lg:mt-0 ml-4 py-4 px-6 focus:outline-none focus:shadow-outline transition-colors duration-200 uppercase"
-                  onClick={() => {
-                    window.alert("With typescript and Jest");
-                  }}
+                  href="https://community.cadcad.org/"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
                   Join our community
-                </button>
+                </a>
               </div>
             </div>
           </div>
@@ -162,7 +204,7 @@ export const Home = (): JSX.Element => {
 
         {/* Why? How? What?  */}
         <section className="bg-white border-b py-16">
-          <div className="container mx-auto flex flex-wrap pt-4 pb-12 bg-cadcad-blue">
+          <div className="container mx-auto flex flex-wrap py-8 bg-cadcad-blue">
             {/*<h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
               Title
             </h1>*/}
@@ -191,7 +233,7 @@ export const Home = (): JSX.Element => {
               </div>
               */}
             </div>
-            <div className="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+            <div className="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink border-l border-l-blue-200 border-l-2">
               <div className="flex-1 rounded-t rounded-b-none overflow-hidden shadow">
                 <div className="w-full font-bold text-xl text-white px-6 pb-4">
                   How?
@@ -204,7 +246,7 @@ export const Home = (): JSX.Element => {
                 </p>
               </div>
             </div>
-            <div className="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink">
+            <div className="w-full md:w-1/3 p-6 flex flex-col flex-grow flex-shrink border-l">
               <div className="flex-1 rounded-t rounded-b-none overflow-hidden shadow">
                 <div className="w-full font-bold text-xl text-white px-6 pb-4">
                   What?
@@ -294,80 +336,183 @@ export const Home = (): JSX.Element => {
 
         {/* Getting Started */}
         <section className="bg-white border-b py-8">
-          <div className="container mx-auto flex flex-wrap pt-4 pb-12">
+          <div className="container mx-auto flex flex-wrap pt-4 pb-12 text-center">
             <h1 className="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
               Getting Started
             </h1>
 
             <div className="w-full md:w-1/6 p-6 flex flex-col flex-grow flex-shrink">
-              <CadCAD className="w-full my-6 h-8" />
-              <div className="w-full font-bold text-xl text-gray-800 py-4">
-                Go to our <a href="#">Github</a>
+              <div className="h-24">
+                <span className="inline-flex flex items-center justify-center border-2 border-black rounded-full h-24 w-24">
+                  <GettingStarted1 />
+                </span>
+              </div>
+              <div className="w-full font-bold text-base text-gray-800 py-4">
+                Go to our{" "}
+                <a
+                  href="https://github.com/cadCAD-org/cadCAD"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="text-cadcad-lightblue"
+                >
+                  Github
+                </a>
               </div>
               <p className="text-gray-800 text-base mb-5">
                 Install cadCAD and read through our documentation and guides.
-                You may also find this community-created list of resources quite
-                helpful too
+                You may also find this{" "}
+                <a
+                  href="https://www.one-tab.com/page/1G-5FvsaSauRH-jfQA9KEA"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="text-cadcad-lightblue"
+                >
+                  community-created list of resources
+                </a>{" "}
+                quite helpful too.
               </p>
             </div>
 
             <div className="w-full md:w-1/6 p-6 flex flex-col flex-grow flex-shrink">
-              <CadCAD className="w-full my-6 h-8" />
-              <div className="w-full font-bold text-xl text-gray-800 py-4">
-                Go to our <a href="#">Github</a>
+              <div className="h-24">
+                <span className="inline-flex flex items-center justify-center border-2 border-black rounded-full h-24 w-24">
+                  <GettingStarted2 />
+                </span>
+              </div>
+              <div className="w-full font-bold text-base text-gray-800 py-4">
+                Watch{" "}
+                <a
+                  href="https://www.youtube.com/playlist?list=PLmWm8ksQq4YKtdRV-SoinhV6LbQMgX1we"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="text-cadcad-lightblue"
+                >
+                  our tutorials
+                </a>
               </div>
               <p className="text-gray-800 text-base mb-5">
-                Install cadCAD and read through our documentation and guides.
-                You may also find this community-created list of resources quite
-                helpful too
+                In this series of videos, we introduce basic concepts of cadCAD
+                and system modeling in general using a simple toy model.
               </p>
             </div>
 
             <div className="w-full md:w-1/6 p-6 flex flex-col flex-grow flex-shrink">
-              <CadCAD className="w-full my-6 h-8" />
-              <div className="w-full font-bold text-xl text-gray-800 py-4">
-                Go to our <a href="#">Github</a>
+              <div className="h-24">
+                <span className="inline-flex flex items-center justify-center border-2 border-black rounded-full h-24 w-24">
+                  <GettingStarted3 />
+                </span>
+              </div>
+              <div className="w-full font-bold text-base text-gray-800 py-4">
+                Get some{" "}
+                <a
+                  href="https://www.youtube.com/playlist?list=PLmWm8ksQq4YJnNDMaslh20axb4r7fgW_a"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="text-cadcad-lightblue"
+                >
+                  inspiration
+                </a>
               </div>
               <p className="text-gray-800 text-base mb-5">
-                Install cadCAD and read through our documentation and guides.
-                You may also find this community-created list of resources quite
-                helpful too
+                We&apos;ve gathered a list of videos and{" "}
+                <a
+                  href="https://www.notion.so/cadCAD-Onboarding-TL-DR-e0da826e676344ee94d71d39d65d4fc2"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="text-cadcad-lightblue"
+                >
+                  resources
+                </a>{" "}
+                to give you some inspiration for the application of cadCAD in
+                your project.
               </p>
             </div>
 
             <div className="w-full md:w-1/6 p-6 flex flex-col flex-grow flex-shrink">
-              <CadCAD className="w-full my-6 h-8" />
-              <div className="w-full font-bold text-xl text-gray-800 py-4">
-                Go to our <a href="#">Github</a>
+              <div className="h-24">
+                <span className="inline-flex flex items-center justify-center border-2 border-black rounded-full h-24 w-24">
+                  <GettingStarted4 />
+                </span>
+              </div>
+              <div className="w-full font-bold text-base text-gray-800 py-4">
+                Join the talk
               </div>
               <p className="text-gray-800 text-base mb-5">
-                Install cadCAD and read through our documentation and guides.
-                You may also find this community-created list of resources quite
-                helpful too
+                Making your first steps can be frustrating so don&apos;t
+                hesitate to reach out for support in{" "}
+                <a
+                  href="https://t.me/joinchat/BehTglN4UOLe83MpgBelzw"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="text-cadcad-lightblue"
+                >
+                  Telegram chat
+                </a>
+                ,{" "}
+                <a
+                  href="https://discord.gg/5m9ZXEEj4F"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="text-cadcad-lightblue"
+                >
+                  Discord
+                </a>{" "}
+                and our{" "}
+                <a
+                  href="https://community.cadcad.org/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="text-cadcad-lightblue"
+                >
+                  forum
+                </a>
+                .
               </p>
             </div>
 
             <div className="w-full md:w-1/6 p-6 flex flex-col flex-grow flex-shrink">
-              <CadCAD className="w-full my-6 h-8" />
-              <div className="w-full font-bold text-xl text-gray-800 py-4">
-                Go to our <a href="#">Github</a>
+              <div className="h-24">
+                <span className="inline-flex flex items-center justify-center border-2 border-black rounded-full h-24 w-24">
+                  <GettingStarted5 />
+                </span>
+              </div>
+              <div className="w-full font-bold text-base text-gray-800 py-4">
+                Join{" "}
+                <a
+                  href="https://www.cadcad.education/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="text-cadcad-lightblue"
+                >
+                  our bootcamp
+                </a>
               </div>
               <p className="text-gray-800 text-base mb-5">
-                Install cadCAD and read through our documentation and guides.
-                You may also find this community-created list of resources quite
-                helpful too
+                The most comprehensive cadCAD beginner course on the web. If
+                you&apos;re new to cadCAD, your journey starts here.
               </p>
             </div>
 
             <div className="w-full md:w-1/6 p-6 flex flex-col flex-grow flex-shrink">
-              <CadCAD className="w-full my-6 h-8" />
-              <div className="w-full font-bold text-xl text-gray-800 py-4">
-                Go to our <a href="#">Github</a>
+              <div className="h-24">
+                <span className="inline-flex flex items-center justify-center border-2 border-black rounded-full h-24 w-24">
+                  <GettingStarted6 />
+                </span>
+              </div>
+              <div className="w-full font-bold text-base text-gray-800 py-4">
+                Play{" "}
+                <a
+                  href="https://sim.commonsstack.org/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="text-cadcad-lightblue"
+                >
+                  the simulator
+                </a>
               </div>
               <p className="text-gray-800 text-base mb-5">
-                Install cadCAD and read through our documentation and guides.
-                You may also find this community-created list of resources quite
-                helpful too
+                Become the futuristic, solarpunk character in this Commons
+                Simulator adventure to correct the course of history.
               </p>
             </div>
           </div>
@@ -385,8 +530,43 @@ export const Home = (): JSX.Element => {
                 to become a community-driven project.
               </p>
               <p className="text-gray-800 px-6 mb-5">
-                Join the discussion on Discource and Telegram and follow us on
-                Twitter
+                Join the discussion on{" "}
+                <a
+                  href="https://community.cadcad.org/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="text-cadcad-lightblue"
+                >
+                  Discource
+                </a>
+                ,{" "}
+                <a
+                  href="https://t.me/joinchat/BehTglN4UOLe83MpgBelzw"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="text-cadcad-lightblue"
+                >
+                  Telegram
+                </a>{" "}
+                and{" "}
+                <a
+                  href="https://discord.gg/5m9ZXEEj4F"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="text-cadcad-lightblue"
+                >
+                  Discord
+                </a>{" "}
+                and follow us on{" "}
+                <a
+                  href="https://twitter.com/cadcad_org"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="text-cadcad-lightblue"
+                >
+                  Twitter
+                </a>
+                .
               </p>
             </div>
           </div>
@@ -400,12 +580,27 @@ export const Home = (): JSX.Element => {
             </h2>
             <div className="md:w-1/2 w-full text-xl text-gray-800 px-6">
               <p className="text-gray-800 px-6 mb-5 break-words">
-                You can support our product on OpenCollective:
-                https://opencollective.com/cadcad1
+                You can support our product on OpenCollective:{" "}
+                <a
+                  href="https://opencollective.com/cadcad1"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="text-cadcad-lightblue"
+                >
+                  https://opencollective.com/cadcad1
+                </a>
               </p>
               <p className="text-gray-800 px-6 mb-5 break-words">
                 Or you can donate crypto by sending ETH/tokens to our multisig
-                address: 0xbcd768c566143714309afe87feb901da7543f470
+                address:{" "}
+                <a
+                  href="https://etherscan.io/address/0xbcd768c566143714309afe87feb901da7543f470"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  className="text-cadcad-lightblue"
+                >
+                  0xbcd768c566143714309afe87feb901da7543f470
+                </a>
               </p>
             </div>
           </div>
@@ -420,7 +615,15 @@ export const Home = (): JSX.Element => {
               alt="Blockscience logo"
             />
             <h2 className="w-full font-bold  my-6 text-3xl text-gray-800 px-6">
-              Created by BlockScience
+              Created by{" "}
+              <a
+                href="https://block.science/"
+                rel="noopener noreferrer"
+                target="_blank"
+                className="text-cadcad-lightblue"
+              >
+                BlockScience
+              </a>
             </h2>
             <p className="text-gray-800 text-xl px-6 mb-5">
               cadCAD was created as an internal tool at BlockScience – an
@@ -441,7 +644,9 @@ export const Home = (): JSX.Element => {
                 <ul className="list-reset mb-6">
                   <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                     <a
-                      href="#"
+                      href="https://github.com/cadCAD-org/cadCAD"
+                      rel="noopener noreferrer"
+                      target="_blank"
                       className="no-underline hover:underline text-gray-800 hover:text-pink-500"
                     >
                       Github
@@ -449,7 +654,9 @@ export const Home = (): JSX.Element => {
                   </li>
                   <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                     <a
-                      href="#"
+                      href="https://www.youtube.com/playlist?list=PLmWm8ksQq4YKtdRV-SoinhV6LbQMgX1we"
+                      rel="noopener noreferrer"
+                      target="_blank"
                       className="no-underline hover:underline text-gray-800 hover:text-pink-500"
                     >
                       Video tutorials
@@ -457,7 +664,9 @@ export const Home = (): JSX.Element => {
                   </li>
                   <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                     <a
-                      href="#"
+                      href="https://www.youtube.com/playlist?list=PLmWm8ksQq4YJnNDMaslh20axb4r7fgW_a"
+                      rel="noopener noreferrer"
+                      target="_blank"
                       className="no-underline hover:underline text-gray-800 hover:text-pink-500"
                     >
                       Inspirational videos
@@ -465,7 +674,9 @@ export const Home = (): JSX.Element => {
                   </li>
                   <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                     <a
-                      href="#"
+                      href="https://www.one-tab.com/page/1G-5FvsaSauRH-jfQA9KEA"
+                      rel="noopener noreferrer"
+                      target="_blank"
                       className="no-underline hover:underline text-gray-800 hover:text-pink-500"
                     >
                       List of related resources
@@ -480,7 +691,9 @@ export const Home = (): JSX.Element => {
                 <ul className="list-reset mb-6">
                   <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                     <a
-                      href="#"
+                      href="https://discord.gg/5m9ZXEEj4F"
+                      rel="noopener noreferrer"
+                      target="_blank"
                       className="no-underline hover:underline text-gray-800 hover:text-pink-500"
                     >
                       Discord
@@ -488,7 +701,9 @@ export const Home = (): JSX.Element => {
                   </li>
                   <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                     <a
-                      href="#"
+                      href="https://community.cadcad.org/"
+                      rel="noopener noreferrer"
+                      target="_blank"
                       className="no-underline hover:underline text-gray-800 hover:text-pink-500"
                     >
                       Discourse
@@ -496,7 +711,9 @@ export const Home = (): JSX.Element => {
                   </li>
                   <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                     <a
-                      href="#"
+                      href="https://t.me/joinchat/BehTglN4UOLe83MpgBelzw"
+                      rel="noopener noreferrer"
+                      target="_blank"
                       className="no-underline hover:underline text-gray-800 hover:text-pink-500"
                     >
                       Telegram
@@ -504,7 +721,9 @@ export const Home = (): JSX.Element => {
                   </li>
                   <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                     <a
-                      href="#"
+                      href="https://twitter.com/cadcad_org"
+                      rel="noopener noreferrer"
+                      target="_blank"
                       className="no-underline hover:underline text-gray-800 hover:text-pink-500"
                     >
                       Twitter
@@ -520,22 +739,23 @@ export const Home = (): JSX.Element => {
                   <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                     <a
                       href="#"
+                      rel="noopener noreferrer"
+                      target="_blank"
                       className="no-underline hover:underline text-gray-800 hover:text-pink-500"
                     >
                       OpenCollective
                     </a>
                   </li>
                   <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-                    <a
-                      href="#"
-                      className="no-underline hover:underline text-gray-800 hover:text-pink-500"
-                    >
+                    <div className="no-underline text-gray-800">
                       ETH Donation address:
-                    </a>
+                    </div>
                   </li>
                   <li className="mt-2 inline-block mr-2 md:block md:mr-0">
                     <a
-                      href="#"
+                      href="https://etherscan.io/address/0xbcd768c566143714309afe87feb901da7543f470"
+                      rel="noopener noreferrer"
+                      target="_blank"
                       className="no-underline hover:underline text-gray-800 hover:text-pink-500"
                     >
                       0xbcd768c566143714309afe87feb901da7543f470

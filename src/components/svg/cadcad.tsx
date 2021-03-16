@@ -2,7 +2,7 @@ type Props = {
   className?: string;
 };
 
-const CadCAD = ({ className = "my-6" }: Props) => (
+const CadCAD = ({ className = "no-class" }: Props) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="265"
